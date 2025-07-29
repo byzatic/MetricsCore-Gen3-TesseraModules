@@ -1,6 +1,8 @@
 # MetricsCore-Gen3-TesseraModules
 MetricsCore-Gen3 is the monitoring project based on Tessera-DFE
 
+**issue:** [Add GET and PUT command documentation to all WorkflowRoutine READMEs](issue-add-get-put-docs.md)
+
 ### Shared Resources
 - MCg3 Monitoring Project Common -> [sharedresources-project-common](sharedresources-project-common)
 
