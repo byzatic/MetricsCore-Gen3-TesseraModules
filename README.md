@@ -1,27 +1,11 @@
 # MetricsCore-Gen3-TesseraModules
 MetricsCore-Gen3 is the monitoring project based on Tessera-DFE
 
-To move from MCg3 libs to Tessera libs
-```shell
-find . -type f \( -name '*.java' -o -name '*.xml' -o -name '*.properties' \) \
-  -exec sed -i '' 's/ru\.byzatic\.metrics_core\.mcg3_enginecommon_lib/io.github.byzatic.tessera.enginecommon/g' {} +
+### Shared Resources
+- MCg3 Monitoring Project Common -> [sharedresources-project-common](sharedresources-project-common)
 
-find . -type f \( -name '*.java' -o -name '*.xml' -o -name '*.properties' \) \
-  -exec sed -i '' 's/ru\.byzatic\.metrics_core\.mcg3_storageapi_lib/io.github.byzatic.tessera.storageapi/g' {} +
+### WorkflowRoutine
+- MCg3 WorkflowRoutine Prometheus Get Data -> [workflowroutine-prometheus-get-data](workflowroutine-prometheus-get-data)
 
-find . -type f \( -name '*.java' -o -name '*.xml' -o -name '*.properties' \) \
-  -exec sed -i '' 's/ru\.byzatic\.metrics_core\.service_lib/io.github.byzatic.tessera.service/g' {} +
-
-find . -type f \( -name '*.java' -o -name '*.xml' -o -name '*.properties' \) \
-  -exec sed -i '' 's/ru\.byzatic\.metrics_core\.workflowroutines_lib/io.github.byzatic.tessera.workflowroutine/g' {} +
-```
-
-```shell
-find . -type f \( -name '*.java' -o -name '*.xml' -o -name '*.properties' \) \
-  -exec sed -i '' 's/ru\.byzatic\.commons/io.github.byzatic.commons/g' {} +
-```
-
-```shell
-find . -type f \( -name '*.java' -o -name '*.xml' -o -name '*.properties' \) \
-  -exec sed -i '' 's/ru\.byzatic\.metrics_core\.services\.mcg3_service_prometheus_export/io.github.byzatic.tessera.mcg3.services.service_prometheus_export/g' {} +
-```
+### Service 
+- MCg3 Service Prometheus Export -> [service-prometheus-export](service-prometheus-export)
