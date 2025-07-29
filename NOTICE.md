@@ -18,7 +18,7 @@ find . -type f \( -name '*.java' -o -name '*.xml' -o -name '*.properties' \) \
 
 ```shell
 find . -type f \( -name '*.java' -o -name '*.xml' -o -name '*.properties' \) \
-  -exec sed -i '' 's/ru\.byzatic\.metrics_core\.modules\.workflow_routines\.mcg3_workflowroutine_graph_lifting_data/io.github.byzatic.tessera.mcg3.workflowroutine.graph_lifting_data/g' {} +
+  -exec sed -i '' 's/ru\.byzatic\.metrics_core\.modules\.workflow_routines\.mcg3_workflowroutine_processing_status/io.github.byzatic.tessera.mcg3.workflowroutine.processing_status/g' {} +
 
 ```
 
