@@ -14,7 +14,7 @@
     <name>workflowroutine-prometheus-get-data</name>
 
     <properties>
-        <fully.qualified.main.class>${project.groupId}.tessera.mcg3.services.service_prometheus_export.PrometheusExportService</fully.qualified.main.class>
+        <fully.qualified.main.class>${project.groupId}.tessera.mcg3.workflowroutine.prometheus_get_data.PrometheusGetDataWorkflowRoutine</fully.qualified.main.class>
     </properties>
 
     <dependencies>
