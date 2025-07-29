@@ -34,5 +34,7 @@ A lightweight factory class used by Tessera to instantiate `PrometheusExportServ
 ## Integration
 This service is not part of the DAG execution graph. Instead, it runs independently and is managed by the service control subsystem within the Tessera engine.
 It continuously observes and exports metrics derived from workflow activity and internal service state, making them available for Prometheus-based monitoring solutions.
+
 ---
+
 This module is intended to operate within the Tessera orchestration engine and is not a standalone Prometheus exporter.
