@@ -31,6 +31,7 @@
   <modules>
     <module>service-prometheus-export</module>
     <module>sharedresources-project-common</module>
+    <module>workflowroutine-prometheus-get-data</module>
   </modules>
 
   <scm>
@@ -154,7 +155,7 @@
     <dependency>
       <groupId>commons-beanutils</groupId>
       <artifactId>commons-beanutils</artifactId>
-      <version>1.9.4</version>
+      <version>1.11.0</version>
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/junit/junit -->
