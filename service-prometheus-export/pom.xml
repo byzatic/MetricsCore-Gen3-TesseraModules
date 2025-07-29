@@ -25,6 +25,7 @@
             <groupId>io.github.byzatic</groupId>
             <artifactId>sharedresources-project-common</artifactId>
             <version>0.0.1</version>
+            <scope>provided</scope>
         </dependency>
 
         <dependency>
