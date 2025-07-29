@@ -8,21 +8,36 @@
     </parent>
 
     <artifactId>workflowroutine-data-enrichment</artifactId>
+    <version>0.0.1</version>
     <packaging>jar</packaging>
 
     <name>workflowroutine-data-enrichment</name>
-    <url>http://maven.apache.org</url>
-
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <fully.qualified.main.class>${project.groupId}.tessera.mcg3.workflowroutine.data_enrichment.DataEnrichmentWorkflowRoutine</fully.qualified.main.class>
     </properties>
 
     <dependencies>
+
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>3.8.1</version>
-            <scope>test</scope>
+            <groupId>io.github.byzatic</groupId>
+            <artifactId>sharedresources-project-common</artifactId>
+            <version>0.0.1</version>
+            <scope>provided</scope>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.freemarker/freemarker -->
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.34</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-math3 -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-math3</artifactId>
+            <version>3.6.1</version>
+        </dependency>
+
     </dependencies>
 </project>
