@@ -23,9 +23,13 @@ jobs:
       - name: Build all modules with Maven
         run: mvn clean package -DskipTests
 
-      - name: Upload fat JARs as artifacts
+      - name: Collect only fat JARs into export/ directory
+        run: |
+          mkdir -p export
+          find . -type f -name "*-jar-with-dependencies.jar" -exec cp {} export/ \;
+
+      - name: Upload fat JARs as artifact
         uses: actions/upload-artifact@v4
         with:
           name: tessera-fat-jars
-          path: |
-            **/target/*-jar-with-dependencies.jar
+          path: export/
