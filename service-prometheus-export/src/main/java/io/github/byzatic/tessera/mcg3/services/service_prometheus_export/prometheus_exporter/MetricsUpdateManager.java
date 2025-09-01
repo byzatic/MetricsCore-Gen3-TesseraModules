@@ -45,7 +45,9 @@ public class MetricsUpdateManager implements MetricsUpdateManagerInterface {
 
             for (StorageItem storageItem : storageItemList) {
                 logger.debug("Processing storageItem - {}", storageItem);
-                DataItem newDataItem = CustomConverter.parse(storageItem.getDataValue(), DataItem.class);
+                // TODO: Not used until https://github.com/byzatic/JavaByzaticCommons/issues/3
+                //DataItem newDataItem = CustomConverter.parse(storageItem.getDataValue(), DataItem.class);
+                DataItem newDataItem = (DataItem) storageItem.getDataValue();
                 metricRepository.put(newDataItem);
             }
             logger.debug("Update metrics complete");

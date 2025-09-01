@@ -75,7 +75,7 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <!-- dependency versions list -->
-    <version.java_byzatic_commons>0.0.3</version.java_byzatic_commons>
+    <version.java_byzatic_commons>0.0.6</version.java_byzatic_commons>
     <version.slf4j>1.7.25</version.slf4j>
     <version.logback>1.5.13</version.logback>
     <version.junit>4.13.1</version.junit>
