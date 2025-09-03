@@ -19,7 +19,6 @@ import java.net.URL;
 
 public class PrometheusExportService extends AbstractService {
     private final static Logger logger = LoggerFactory.getLogger(PrometheusExportService.class);
-    private HealthFlagState state = null;
     private final DomainLogicInterface domainLogic;
 
     public PrometheusExportService(MCg3ServiceApiInterface serviceApi, HealthFlagProxy healthFlagProxy) throws MCg3ApiOperationIncompleteException {
@@ -27,12 +26,12 @@ public class PrometheusExportService extends AbstractService {
                 PrometheusExportService.class,
                 serviceApi,
                 healthFlagProxy,                           // service state proxy
-                Version.of(0, 0, 0),    // service Version
+                Version.of(1, 0, 0),    // service Version
                 Version.of(1, 0, 0),    // service Requires MCg3 Version
                 "My example private String service",       // service Description
                 "My Name",                                 // service Provider
                 "Apache License 2.0",                      // service License
-                3L                                         // termination Interval Minutes (3 min)
+                1L                                         // termination Interval Minutes (1 min)
         );
         healthFlagProxy.setHealthFlagState(HealthFlagState.RUNNING);
         try {
@@ -73,13 +72,11 @@ public class PrometheusExportService extends AbstractService {
     @Override
     public void run() {
         try (AutoCloseable ignored = super.getServiceApi().getExecutionContext().getMdcContext().use()) {
-            state = HealthFlagState.RUNNING;
             super.healthFlagProxy.setHealthFlagState(HealthFlagState.RUNNING);
             logger.debug("healthFlagProxy RUNNING -> {}", super.healthFlagProxy);
 
             this.domainLogic.process();
 
-            state = HealthFlagState.STOPPED;
             super.healthFlagProxy.setHealthFlagState(HealthFlagState.STOPPED);
             logger.debug("healthFlagProxy STOPPED -> {}", super.healthFlagProxy);
 
@@ -93,7 +90,12 @@ public class PrometheusExportService extends AbstractService {
 
     @Override
     public void terminate() {
-        state = HealthFlagState.STOPPED;
+        try {
+            this.domainLogic.terminate();
+        } catch (MCg3ApiOperationIncompleteException e) {
+            super.healthFlagProxy.setHealthFlagState(HealthFlagState.FATAL);
+            throw new RuntimeException(e);
+        }
     }
 
 }

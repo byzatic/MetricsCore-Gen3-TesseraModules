@@ -22,4 +22,14 @@ public class DomainLogic implements DomainLogicInterface {
             throw new MCg3ApiOperationIncompleteException(e);
         }
     }
+
+    @Override
+    public void terminate() throws MCg3ApiOperationIncompleteException {
+        try {
+            this.prometheusExporter.terminate();
+        } catch (Exception e) {
+            logger.error("Domain logic error", e);
+            throw new MCg3ApiOperationIncompleteException(e);
+        }
+    }
 }

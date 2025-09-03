@@ -4,4 +4,6 @@ import io.github.byzatic.tessera.storageapi.exceptions.MCg3ApiOperationIncomplet
 
 public interface DomainLogicInterface {
     void process() throws MCg3ApiOperationIncompleteException;
+
+    void terminate() throws MCg3ApiOperationIncompleteException;
 }
